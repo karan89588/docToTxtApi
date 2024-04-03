@@ -18,8 +18,8 @@ const upload = multer({
   fileFilter: function (req, file, cb) {
     var ext = path.extname(file.originalname);
 
-    if (ext !== ".docx") {
-      return cb(new Error("Only Docxs are allowed!"));
+    if (ext !== ".docx"|| ext !== '.doc') {
+      return cb(new Error("Only Word Files are allowed!"));
     }
 
     cb(null, true);
